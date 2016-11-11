@@ -1,0 +1,29 @@
+{
+  "name": "klb",
+  "scripts": {
+  },
+  "env": {
+    "LINE_CHANNEL_ID": {
+      "required": true
+    },
+    "LINE_CHANNEL_MID": {
+      "required": true
+    },
+    "LINE_CHANNEL_SECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "fixie"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
