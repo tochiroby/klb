@@ -11,7 +11,8 @@ $type = $jsonObj->{"events"}[0]->{"message"}->{"type"};
 $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 //ReplyToken取得
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
-
+//userId取得
+$userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
 //メッセージ以外のときは何も返さず終了
 if($type != "text"){
 	exit;
@@ -24,112 +25,41 @@ if ($text == 'はい') {
     "altText" => "最寄り駅を選択してください",
     "template" => [
       "type" => "buttons",
-      //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      //"title" => "○○レストラン",
       "text" => "最寄り駅を選択してください",
       "actions" => [
           [
             "type" => "postback",
             "label" => "郡山",
-            "data" => "action=buy&itemid=123"
+            "text" => "郡山"
+
           ],
           [
             "type" => "postback",
             "label" => "福島",
-            "data" => "action=pcall&itemid=123"
+            "text" => "福島"
           ],
           [
-            "type" => "uri",
+            "type" => "postback",
             "label" => "福島南",
-            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+            "text" => "福島南"
           ],
           [
             "type" => "message",
             "label" => "いわき",
-            "text" => "違うやつお願い"
+            "text" => "いわき"
           ]
       ]
     ]
   ];
+}else if($text == '福島'){
+  $response_format_text =　[
+    "text" => $userId
+  ]
+
+
 } else if ($text == 'いいえ') {
   exit;
-} else if ($text == '違うやつお願い') {
-  $response_format_text = [
-    "type" => "template",
-    "altText" => "候補を３つご案内しています。",
-    "template" => [
-      "type" => "carousel",
-      "columns" => [
-          [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-1.jpg",
-            "title" => "●●レストラン",
-            "text" => "こちらにしますか？",
-            "actions" => [
-              [
-                  "type" => "postback",
-                  "label" => "予約する",
-                  "data" => "action=rsv&itemid=111"
-              ],
-              [
-                  "type" => "postback",
-                  "label" => "電話する",
-                  "data" => "action=pcall&itemid=111"
-              ],
-              [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-              ]
-            ]
-          ],
-          [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-2.jpg",
-            "title" => "▲▲レストラン",
-            "text" => "それともこちら？（２つ目）",
-            "actions" => [
-              [
-                  "type" => "postback",
-                  "label" => "予約する",
-                  "data" => "action=rsv&itemid=222"
-              ],
-              [
-                  "type" => "postback",
-                  "label" => "電話する",
-                  "data" => "action=pcall&itemid=222"
-              ],
-              [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-              ]
-            ]
-          ],
-          [
-            "thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img2-3.jpg",
-            "title" => "■■レストラン",
-            "text" => "はたまたこちら？（３つ目）",
-            "actions" => [
-              [
-                  "type" => "postback",
-                  "label" => "予約する",
-                  "data" => "action=rsv&itemid=333"
-              ],
-              [
-                  "type" => "postback",
-                  "label" => "電話する",
-                  "data" => "action=pcall&itemid=333"
-              ],
-              [
-                  "type" => "uri",
-                  "label" => "詳しく見る（ブラウザ起動）",
-                  "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
-              ]
-            ]
-          ]
-      ]
-    ]
-  ];
-} else {
+}else {
   $response_format_text = [
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
