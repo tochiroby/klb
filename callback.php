@@ -21,7 +21,7 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    //"altText" => "こちらの〇〇はいかがですか？",
+    "altText" => "こちらの〇〇はいかがですか？",
     "template" => [
       "type" => "buttons",
       "text" => "都道府県を選択してください",
