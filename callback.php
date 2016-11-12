@@ -26,23 +26,23 @@ if ($text == 'はい') {
     "template" => [
       "type" => "buttons",
       //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      "title" => "○○レストラン",
-      "text" => "お探しのレストランはこれですね",
+      "title" => "最寄り駅を選択してください",
+      "text" => "最寄り駅を選択してください",
       "actions" => [
           [
-            "type" => "postback",
-            "label" => "予約する",
-            "data" => "action=buy&itemid=123"
+            "type" => "message",
+            "label" => "郡山",
+            "text" => "郡山"
           ],
           [
-            "type" => "postback",
-            "label" => "電話する",
-            "data" => "action=pcall&itemid=123"
+            "type" => "message",
+            "label" => "福島",
+            "text" => "福島"
           ],
           [
-            "type" => "uri",
-            "label" => "詳しく見る",
-            "uri" => "https://" . $_SERVER['SERVER_NAME'] . "/"
+            "type" => "message",
+            "label" => "福島南",
+            "text" => "福島南"
           ],
           [
             "type" => "message",
