@@ -28,18 +28,18 @@ if ($text == 'はい') {
       "text" => "最寄り駅を選択してください",
       "actions" => [
           [
-            "type" => "postback",
+            "type" => "message",
             "label" => "郡山",
             "text" => "郡山"
 
           ],
           [
-            "type" => "postback",
+            "type" => "message",
             "label" => "福島",
             "text" => "福島"
           ],
           [
-            "type" => "postback",
+            "type" => "message",
             "label" => "福島南",
             "text" => "福島南"
           ],
@@ -53,6 +53,8 @@ if ($text == 'はい') {
   ];
 }else if($text == '福島'){
   $response_format_text =　[
+    "type" => "message",
+    "label" => "はい",    
     "text" => $userId
   ]
 
