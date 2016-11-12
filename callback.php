@@ -12,7 +12,7 @@ $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 //ReplyToken取得
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 //userId取得
-$userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
+//$userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
 //メッセージ以外のときは何も返さず終了
 if($type != "text"){
 	exit;
@@ -54,8 +54,9 @@ if ($text == 'はい') {
 }else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
-    "label" => "はい",    
-    "text" => $userId
+    "label" => "福島",    
+    "text" => "福島"
+    //$userId
   ]
 
 
