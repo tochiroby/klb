@@ -12,7 +12,7 @@ $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 //ReplyToken取得
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 //userId取得
-//$userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
+$userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
 //メッセージ以外のときは何も返さず終了
 if($type != "text"){
 	exit;
@@ -28,23 +28,23 @@ if ($text == 'はい') {
       "text" => "最寄り駅を選択してください",
       "actions" => [
           [
-            "type" => "message",
+            "type" => "postback",
             "label" => "郡山",
             "text" => "郡山"
 
           ],
           [
-            "type" => "message",
+            "type" => "postback",
             "label" => "福島",
             "text" => "福島"
           ],
           [
-            "type" => "message",
+            "type" => "postback",
             "label" => "福島南",
             "text" => "福島南"
           ],
           [
-            "type" => "message",
+            "type" => "postback",
             "label" => "いわき",
             "text" => "いわき"
           ]
@@ -54,9 +54,8 @@ if ($text == 'はい') {
 }else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
-    "label" => "福島",    
-    "text" => "福島"
-    //$userId
+    "label" => "はい",    
+    "text" => $userId
   ]
 
 
