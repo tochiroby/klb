@@ -53,13 +53,12 @@ if ($text == 'はい') {
     ]
   ];
 }else if($text == '福島'){
+  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);
   $response_format_text =　[
     "type" => "message",
     "label" => "はい",    
-    "text" => $userId
+    "text" => $textMessageBuilder
   ];
-
-
 } else if ($text == 'いいえ') {
   exit;
 }else {
