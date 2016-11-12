@@ -53,16 +53,24 @@ if ($text == 'はい') {
     ]
   ];
 } else if ($text == 'いいえ') {
-  exit;
+  exit;/*
 }else if($text == '福島'){
-  $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);
+  //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);
   $response_format_text =　[
     "type" => "message",
     "label" => "はい",    
-    "text" => $textMessageBuilder
-];
+    "text" => $userId
+];*/
 }else {
   $response_format_text = [
+        "type" => "message",
+    //"label" => "はい",    
+    "text" => $userId
+    
+    
+    
+    
+    /*
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
     "template" => [
@@ -80,7 +88,7 @@ if ($text == 'はい') {
               "text" => "いいえ"
             ]
         ]
-    ]
+    ]*/
   ];
 }
 
