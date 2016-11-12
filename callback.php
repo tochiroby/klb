@@ -24,36 +24,18 @@ if ($text == 'はい') {
     "altText" => "こちらの〇〇はいかがですか？",
     "template" => [
       "type" => "buttons",
-      "text" => "都道府県を選択してください",
+      //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
+      "title" => "○○レストラン",
+      "text" => "お探しのレストランはこれですね",
       "actions" => [
           [
             "type" => "postback",
-            "label" => 青森県",
+            "label" => "予約する",
             "data" => "action=buy&itemid=123"
           ],
           [
             "type" => "postback",
-            "label" => "秋田県",
-            "data" => "action=pcall&itemid=123"
-          ],
-          [
-            "type" => "postback",
-            "label" => "岩手県",
-            "data" => "action=pcall&itemid=123"
-          ],
-          [
-            "type" => "postback",
-            "label" => "山形県",
-            "data" => "action=pcall&itemid=123"
-          ],
-          [
-            "type" => "postback",
-            "label" => "宮城県",
-            "data" => "action=pcall&itemid=123"
-          ],
-          [
-            "type" => "postback",
-            "label" => "福島県",
+            "label" => "電話する",
             "data" => "action=pcall&itemid=123"
           ],
           [
