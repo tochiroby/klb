@@ -52,43 +52,13 @@ if ($text == 'はい') {
       ]
     ]
   ];
-  /*
-    "type" => "template",
-    "altText" => "最寄り駅を選択してください",
-    "template" => [
-      "type" => "buttons",
-      "text" => "最寄り駅を選択してください",
-      "actions" => [
-          [
-            "type" => "postback",
-            "label" => "郡山",
-            "text" => "郡山"
-          ],
-          [
-            "type" => "postback",
-            "label" => "福島",
-            "text" => "福島"
-          ],
-          [
-            "type" => "postback",
-            "label" => "福島南",
-            "text" => "福島南"
-          ],
-          [
-            "type" => "postback",
-            "label" => "いわき",
-            "text" => "いわき"
-          ]
-      ]
-    ]
-  ];
-/*}else if($text == '福島'){
+}else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
     "label" => "はい",    
     "text" => $userId
-  ]
-*/
+  ];
+
 
 } else if ($text == 'いいえ') {
   exit;
