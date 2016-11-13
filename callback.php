@@ -20,7 +20,7 @@ if($type != "text"){
 }
 
 //返信データ作成
-if($text == '質問'){
+if($text == '質問します'){
   $response_format_text = [
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
@@ -101,7 +101,7 @@ if($text == '質問'){
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
   exit;
-}else {
+}/*else {
   $response_format_text = [
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
@@ -122,7 +122,7 @@ if($text == '質問'){
         ]
     ]
   ];
-}
+}*/
 
 $post_data = [
 	"replyToken" => $replyToken,
