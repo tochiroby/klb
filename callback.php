@@ -58,7 +58,7 @@ if ($text == 'はい') {
     "type" => "message",
     "label" => "質問を入力してください",    
     "text" => $userId
-  ]
+  ];
 } else if ($text == 'いいえ') {
   exit;
 }else {
