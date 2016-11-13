@@ -23,10 +23,10 @@ if($type != "text"){
 if($text == '質問します'){
   $response_format_text = [
     "type" => "template",
-    "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
+    "altText" => "こんにちは 何かご質問はありますか？（はい／いいえ）",
     "template" => [
         "type" => "confirm",
-        "text" => "こんにちわ 何かご質問あありますか？",
+        "text" => "こんにちは 何かご質問はありますか？",
         "actions" => [
             [
               "type" => "message",
@@ -103,7 +103,7 @@ if($text == '質問します'){
     "type" => "template",
     "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
     "template" => [
-        "type" => "confirm",
+        "type" => "text",
         "text" => "ご質問を入力して入力してください",
         /*"actions" => [
             [
