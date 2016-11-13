@@ -20,7 +20,28 @@ if($type != "text"){
 }
 
 //返信データ作成
-if ($text == 'はい') {
+if($text == '質問'){
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
+    "template" => [
+        "type" => "confirm",
+        "text" => "こんにちわ 何かご質問あありますか？",
+        "actions" => [
+            [
+              "type" => "message",
+              "label" => "はい",
+              "text" => "はい"
+            ],
+            [
+              "type" => "message",
+              "label" => "いいえ",
+              "text" => "いいえ"
+            ]
+        ]
+    ]
+  ];
+}else if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "質問の前に最寄り駅を選択してください",
@@ -33,7 +54,7 @@ if ($text == 'はい') {
           [
             "type" => "message",
             "label" => "郡山",
-            "text" =>  "郡山"//$userId
+            "text" =>  $userId//"郡山"
           ],
           [
             "type" => "message",
@@ -58,7 +79,7 @@ if ($text == 'はい') {
   //$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
  //$response_format_text = ["type" => "message",
  $response_format_text = $response_format_text = [
-   /* "type" => "template",
+    "type" => "template",
     "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
     "template" => [
         "type" => "confirm",
@@ -75,9 +96,7 @@ if ($text == 'はい') {
               "text" => "戻る"
             ]
         ]
-    ]*/
-    "type" => "text"
-    "text" => "ご質問を入力して入力OKを押してください（入力OK／戻る）"
+    ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
