@@ -59,20 +59,20 @@ if ($text == 'はい') {
  //$response_format_text = ["type" => "message",
  $response_format_text = $response_format_text = [
     "type" => "template",
-    "altText" => "ご質問を入力してはいを押してください（はい／いいえ）",
+    "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
     "template" => [
         "type" => "confirm",
-        "text" => "ご質問を入力してはいを押してください",
+        "text" => "ご質問を入力して入力OKを押してください",
         "actions" => [
             [
               "type" => "message",
-              "label" => "はい",
-              "text" => "はい"
+              "label" => "入力OK",
+              "text" => "入力OK"
             ],
             [
               "type" => "message",
-              "label" => "いいえ",
-              "text" => "いいえ"
+              "label" => "戻る",
+              "text" => "戻る"
             ]
         ]
     ]
