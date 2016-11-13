@@ -23,17 +23,17 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "最寄り駅を選択してください",
+    "altText" => "質問の前に最寄り駅を選択してください",
     "template" => [
       "type" => "buttons",
       //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
-      "title" => "最寄り駅を選択してください",
-      "text" => "最寄り駅を選択してください",
+      "title" => "質問の前に最寄り駅を選択してください",
+      "text" => "質問の前に最寄り駅を選択してください",
       "actions" => [
           [
             "type" => "message",
             "label" => "郡山",
-            "text" => $userId //"郡山"
+            "text" =>  "郡山"//$userId
           ],
           [
             "type" => "message",
@@ -54,7 +54,7 @@ if ($text == 'はい') {
     ]
   ];
   
-}else if($text == '福島'){
+}else if ($text == '福島'){
   $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
 }else if ($text == 'いいえ') {
   exit;
