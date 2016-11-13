@@ -128,7 +128,7 @@ if($text == '質問します'){
     "altText" => "KoriyamaMasterさんの回答[1]は、【ビックアイの場所は、郡山駅に向かって左側だよ】です",
     "template" => [
         "type" => "confirm",
-        "text" => "回答は役に立ちましたか？",
+        "text" => "KoriyamaMasterさんの回答[1]は、【ビックアイの場所は、郡山駅に向かって左側だよ】です。回答は役に立ちましたか？",
         "actions" => [
             [
               "type" => "message",
