@@ -99,15 +99,15 @@ if($text == '質問'){
     ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
-}else if ($text == 'いいえ'||'質問します'||'回答します'||'質問'||'回答') {
+}else if ($text == 'いいえ') {
   exit;
 }else {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
+    "altText" => "こんにちわ 何かご質問はありますか？（はい／いいえ）",
     "template" => [
         "type" => "confirm",
-        "text" => "こんにちわ 何かご質問あありますか？",
+        "text" => "こんにちわ 何かご質問はありますか？",
         "actions" => [
             [
               "type" => "message",
