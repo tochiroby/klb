@@ -62,11 +62,14 @@ if ($text == 'はい') {
     "text" => $userId
 ];*/
 }else {
-  $response_format_text = [
+  $response_format_text = [/*
     "type" => "message",
-    "label" => "はい",    
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);   
+    "label" => "テスト",    
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);   */
     "text" => $textMessageBuilder
+                "type" => "message",
+            "label" => "違うやつ",
+            "text" => "違うやつお願い"
     
     
     
