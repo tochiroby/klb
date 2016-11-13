@@ -58,7 +58,7 @@ if ($text == 'はい') {
   //$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
  //$response_format_text = ["type" => "message",
  $response_format_text = $response_format_text = [
-    "type" => "template",
+   /* "type" => "template",
     "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
     "template" => [
         "type" => "confirm",
@@ -75,7 +75,9 @@ if ($text == 'はい') {
               "text" => "戻る"
             ]
         ]
-    ]
+    ]*/
+    "type" => "text"
+    "text" => "ご質問を入力して入力OKを押してください（入力OK／戻る）"
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
