@@ -13,6 +13,7 @@ $text = $jsonObj->{"events"}[0]->{"message"}->{"text"};
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 //userId取得
 $userId =  $jsonObj->{"events"}[0]->{"source"}->{"userId"};
+
 //メッセージ以外のときは何も返さず終了
 if($type != "text"){
 	exit;
@@ -32,7 +33,7 @@ if ($text == 'はい') {
           [
             "type" => "message",
             "label" => "郡山",
-            "text" => "郡山"
+            "text" => $userId //"郡山"
           ],
           [
             "type" => "message",
