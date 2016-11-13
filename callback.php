@@ -23,7 +23,7 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こちらの〇〇はいかがですか？",
+    "altText" => "最寄り駅を選択してください",
     "template" => [
       "type" => "buttons",
       //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
@@ -33,7 +33,7 @@ if ($text == 'はい') {
           [
             "type" => "message",
             "label" => "郡山",
-            "text" => $userId //"郡山"
+            "text" => "郡山"
           ],
           [
             "type" => "message",
@@ -53,44 +53,12 @@ if ($text == 'はい') {
       ]
     ]
   ];
-  /*
-    "type" => "template",
-    "altText" => "最寄り駅を選択してください",
-    "template" => [
-      "type" => "buttons",
-      "text" => "最寄り駅を選択してください",
-      "actions" => [
-          [
-            "type" => "postback",
-            "label" => "郡山",
-            "text" => "郡山"
-          ],
-          [
-            "type" => "postback",
-            "label" => "福島",
-            "text" => "福島"
-          ],
-          [
-            "type" => "postback",
-            "label" => "福島南",
-            "text" => "福島南"
-          ],
-          [
-            "type" => "postback",
-            "label" => "いわき",
-            "text" => "いわき"
-          ]
-      ]
-    ]
-  ];
-/*}else if($text == '福島'){
+}else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
-    "label" => "はい",    
+    "label" => "質問を入力してください",    
     "text" => $userId
   ]
-*/
-
 } else if ($text == 'いいえ') {
   exit;
 }else {
