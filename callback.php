@@ -120,7 +120,7 @@ if($text == '質問します'){
     ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
-}else if ($text == 'いいえ') {
+}else if ($text == 'いいえ' OR $text == 'YES' OR $text == 'NO') {
   exit;
 }else {
   $response_format_text = [
@@ -132,13 +132,13 @@ if($text == '質問します'){
         "actions" => [
             [
               "type" => "message",
-              "label" => "はい",
-              "text" => "はい"
+              "label" => "YES",
+              "text" => "YES"
             ],
             [
               "type" => "message",
-              "label" => "いいえ",
-              "text" => "いいえ"
+              "label" => "NO",
+              "text" => "NO"
             ]
         ]
     ]
