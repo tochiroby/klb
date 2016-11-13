@@ -65,7 +65,7 @@ if ($text == 'はい') {
   $response_format_text = [
     "type" => "message",
     //"label" => "はい",    
-    "text" => gettype($userId)
+    "text" => "USERID" + gettype($userId)
     
     
     
