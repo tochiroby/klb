@@ -41,6 +41,27 @@ if($text == '質問します'){
         ]
     ]
   ];
+}else if($text == '回答します'){
+  $response_format_text = [
+    "type" => "template",
+    "altText" => "回答を入力してください（はい／いいえ）",
+    "template" => [
+        "type" => "confirm",
+        "text" => "回答を入力してください",
+        "actions" => [
+            [
+              "type" => "message",
+              "label" => "はい",
+              "text" => "はい"
+            ],
+            [
+              "type" => "message",
+              "label" => "いいえ",
+              "text" => "いいえ"
+            ]
+        ]
+    ]
+  ];  
 }else if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
@@ -54,7 +75,7 @@ if($text == '質問します'){
           [
             "type" => "message",
             "label" => "郡山",
-            "text" =>  $userId//"郡山"
+            "text" =>  "郡山"
           ],
           [
             "type" => "message",
@@ -75,7 +96,7 @@ if($text == '質問します'){
     ]
   ];
   
-}else if ($text == '福島' || '郡山' || '福島南'){
+}else if ($text == '郡山'){
   //$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
  //$response_format_text = ["type" => "message",
  $response_format_text = $response_format_text = [
@@ -101,13 +122,13 @@ if($text == '質問します'){
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
   exit;
-}/*else {
+}else {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
+    "altText" => "KoriyamaMasterさんの回答[1]は、【ビックアイの場所は、郡山駅に向かって左側だよ】です",
     "template" => [
         "type" => "confirm",
-        "text" => "こんにちわ 何かご質問あありますか？",
+        "text" => "回答は役に立ちましたか？",
         "actions" => [
             [
               "type" => "message",
