@@ -22,7 +22,7 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "こちらの〇〇はいかがですか？",
+    "altText" => "最寄り駅を選択してください？",
     "template" => [
       "type" => "buttons",
       //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
@@ -64,8 +64,9 @@ if ($text == 'はい') {
 }else {
   $response_format_text = [
     "type" => "message",
-    //"label" => "はい",    
-    "text" => "USERID" + gettype($userId)
+    "label" => "はい",    
+    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);   
+    "text" => $textMessageBuilder
     
     
     
@@ -108,3 +109,5 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     ));
 $result = curl_exec($ch);
 curl_close($ch);
+
+
