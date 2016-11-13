@@ -52,13 +52,13 @@ if ($text == 'はい') {
           ]
       ]
     ]
-  ];
+  ];/*
 }else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
     "label" => "質問を入力してください",    
     "text" => $userId
-  ];
+  ];*/
 } else if ($text == 'いいえ') {
   exit;
 }else {
