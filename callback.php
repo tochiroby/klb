@@ -103,9 +103,9 @@ if($text == '質問します'){
     "type" => "template",
     "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
     "template" => [
-        "type" => "text",
-        "text" => "ご質問を入力して入力してください",
-        /*"actions" => [
+        "type" => "confirm",
+        "text" => "ご質問を入力して入力OKを押してください",
+        "actions" => [
             [
               "type" => "message",
               "label" => "入力OK",
@@ -116,7 +116,7 @@ if($text == '質問します'){
               "label" => "戻る",
               "text" => "戻る"
             ]
-        ]*/
+        ]
     ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
