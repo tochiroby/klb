@@ -59,7 +59,7 @@ if ($text == 'はい') {
  //$response_format_text = ["type" => "message",
  $response_format_text = array(
 	"type" => "message",
-	"text" => $type
+	"text" => "aaaaaaaa"
 );
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
