@@ -56,10 +56,7 @@ if ($text == 'はい') {
   
 }else if($text == '福島'){
   $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
-  ]
-
-
-} else if ($text == 'いいえ') {
+}else if ($text == 'いいえ') {
   exit;
 }else {
   $response_format_text = [
