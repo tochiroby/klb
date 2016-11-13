@@ -57,10 +57,26 @@ if ($text == 'はい') {
 }else if ($text == '福島'){
   //$response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"質問を入力してください"];
  //$response_format_text = ["type" => "message",
- $response_format_text = array(
-	"type" => "message",
-	"text" => "aaaaaaaa"
-);
+ $response_format_text = $response_format_text = [
+    "type" => "template",
+    "altText" => "ご質問を入力してはいを押してください（はい／いいえ）",
+    "template" => [
+        "type" => "confirm",
+        "text" => "ご質問を入力してはいを押してください",
+        "actions" => [
+            [
+              "type" => "message",
+              "label" => "はい",
+              "text" => "はい"
+            ],
+            [
+              "type" => "message",
+              "label" => "いいえ",
+              "text" => "いいえ"
+            ]
+        ]
+    ]
+  ];
  //"text"=>"質問ボタンから質問を入力してください"];
 }else if ($text == 'いいえ') {
   exit;
