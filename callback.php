@@ -120,7 +120,7 @@ if($text == '質問します'){
     ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
-}else if ($text == 'いいえ' OR $text == 'YES' OR $text == 'NO') {
+}else if ($text == 'いいえ' OR $text == 'YES' OR $text == 'NO' OR $text == '入力OK' OR $text == '戻る') {
   exit;
 }else {
   $response_format_text = [
