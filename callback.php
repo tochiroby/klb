@@ -22,7 +22,7 @@ if($type != "text"){
 if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
-    "altText" => "最寄り駅を選択してください？",
+    "altText" => "こちらの〇〇はいかがですか？",
     "template" => [
       "type" => "buttons",
       //"thumbnailImageUrl" => "https://" . $_SERVER['SERVER_NAME'] . "/img1.jpg",
@@ -52,29 +52,48 @@ if ($text == 'はい') {
       ]
     ]
   ];
-} else if ($text == 'いいえ') {
-  exit;/*
-}else if($text == '福島'){
-  //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);
+  /*
+    "type" => "template",
+    "altText" => "最寄り駅を選択してください",
+    "template" => [
+      "type" => "buttons",
+      "text" => "最寄り駅を選択してください",
+      "actions" => [
+          [
+            "type" => "postback",
+            "label" => "郡山",
+            "text" => "郡山"
+          ],
+          [
+            "type" => "postback",
+            "label" => "福島",
+            "text" => "福島"
+          ],
+          [
+            "type" => "postback",
+            "label" => "福島南",
+            "text" => "福島南"
+          ],
+          [
+            "type" => "postback",
+            "label" => "いわき",
+            "text" => "いわき"
+          ]
+      ]
+    ]
+  ];
+/*}else if($text == '福島'){
   $response_format_text =　[
     "type" => "message",
     "label" => "はい",    
     "text" => $userId
-];*/
+  ]
+*/
+
+} else if ($text == 'いいえ') {
+  exit;
 }else {
-  $response_format_text = [/*
-    "type" => "message",
-    "label" => "テスト",    
-    $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($userId);   */
-    "text" => $textMessageBuilder
-                "type" => "message",
-            "label" => "違うやつ",
-            "text" => "違うやつお願い"
-    
-    
-    
-    
-    /*
+  $response_format_text = [
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
     "template" => [
@@ -92,7 +111,7 @@ if ($text == 'はい') {
               "text" => "いいえ"
             ]
         ]
-    ]*/
+    ]
   ];
 }
 
@@ -112,5 +131,3 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     ));
 $result = curl_exec($ch);
 curl_close($ch);
-
-
