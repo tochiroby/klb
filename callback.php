@@ -54,7 +54,7 @@ if($text == '質問'){
           [
             "type" => "message",
             "label" => "郡山",
-            "text" =>  $userId//"郡山"
+            "text" =>  "郡山"//$userId//
           ],
           [
             "type" => "message",
@@ -68,8 +68,8 @@ if($text == '質問'){
           ],
           [
             "type" => "message",
-            "label" => "違うやつ",
-            "text" => "違うやつお願い"
+            "label" => "他の場所",
+            "text" => "他の場所です"
           ]
       ]
     ]
@@ -80,15 +80,15 @@ if($text == '質問'){
  //$response_format_text = ["type" => "message",
  $response_format_text = $response_format_text = [
     "type" => "template",
-    "altText" => "ご質問を入力して入力OKを押してください（入力OK／戻る）",
+    "altText" => "質問ボタンから質問を入力してください（OK／戻る）",
     "template" => [
         "type" => "confirm",
-        "text" => "ご質問を入力して入力OKを押してください",
+        "text" => "質問ボタンから質問を入力してください",
         "actions" => [
             [
               "type" => "message",
-              "label" => "入力OK",
-              "text" => "入力OK"
+              "label" => "OK",
+              "text" => "OK"
             ],
             [
               "type" => "message",
@@ -99,7 +99,7 @@ if($text == '質問'){
     ]
   ];
  //"text"=>"質問ボタンから質問を入力してください"];
-}else if ($text == 'いいえ') {
+}else if ($text == 'いいえ'||'質問します'||'回答します') {
   exit;
 }else {
   $response_format_text = [
