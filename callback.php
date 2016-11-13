@@ -20,7 +20,7 @@ if($type != "text"){
 }
 
 //返信データ作成
-if($text == '質問'){
+/*if($text == '質問'){
   $response_format_text = [
     "type" => "template",
     "altText" => "こんにちわ 何かご質問あありますか？（はい／いいえ）",
@@ -41,7 +41,7 @@ if($text == '質問'){
         ]
     ]
   ];
-}else if ($text == 'はい') {
+}else */if ($text == 'はい') {
   $response_format_text = [
     "type" => "template",
     "altText" => "質問の前に最寄り駅を選択してください",
